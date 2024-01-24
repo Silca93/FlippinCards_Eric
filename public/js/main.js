@@ -19,33 +19,33 @@ cards.forEach((element, index) => {
     element.dataset.card = values[index];
     
    
-    switch (values[index]) {
-        // case "1":
-        //     element.style.backgroundImage = "url(../public/img/bbe6f4103563031.5f50b135a0b96.jpg)";
-        //     break;
-        case "2":
-            element.style.backgroundImage = "url(../public/img/2.jpg)";
-            break;
-        case "3":
-            element.style.backgroundImage = "url(../public/img/3.jpg)";
-            break;
-        case "4":
-            element.style.backgroundImage = "url(../public/img/4.jpg)";
-            break;
+    // switch (values[index]) {
+    //     case "1":
+    //         element.style.backgroundImage = "url(../public/img/bbe6f4103563031.5f50b135a0b96.jpg)";
+    //         break;
+    //     case "2":
+    //         element.style.backgroundImage = "url(../public/img/2.jpg)";
+    //         break;
+    //     case "3":
+    //         element.style.backgroundImage = "url(../public/img/3.jpg)";
+    //         break;
+    //     case "4":
+    //         element.style.backgroundImage = "url(../public/img/4.jpg)";
+    //         break;
         
-        default:
+    //     default:
             
-            element.style.backgroundImage = "url('defaultURL')";
-            break;
-    }
+    //         element.style.backgroundImage = "url('defaultURL')";
+    //         break;
+    // }
 });
 
 
     cards.forEach(element => {
         element.addEventListener("click", () => {
         element.classList.toggle("flipped");
-        element.classList.remove("back");
-        element.classList.add("front");
+        element.classList.toggle("back");
+        element.classList.toggle("front");
         cardArray.push(element)
         console.log(cardArray);
         if (cardArray.length == 2){
