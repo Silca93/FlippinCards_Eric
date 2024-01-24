@@ -2,18 +2,36 @@ let cards = document.querySelectorAll(".card")
 let cardArray = [];
 let matches = 0;
 console.log(matches);
+
+
 cards.forEach(element => {
     element.addEventListener("click", () => {
     element.classList.toggle("flipped");
     cardArray.push(element)
     console.log(cardArray);
     if (cardArray.length == 2){
-        if (cardArray.length[0].dataset.element === cardArray.length[1].dataset.element){
+        if (cardArray[0].dataset.card === cardArray[1].dataset.card){
             matches++;
+            cardArray = []
             console.log(matches);
+            console.log(cardArray);
         }
+        if (matches == 4){
+            console.log("Congratulations!");
+        }else {
+            setTimeout(() => {
+                
+                cardArray[0].classList.remove("flipped");
+                cardArray[1].classList.remove("flipped");
+                cardArray = [];
+                             
+            }, 2000);
+            
+        }
+        
 
     }
+    
     
     });
 
@@ -26,6 +44,3 @@ cards.forEach(element => {
 //     test.classList.toggle('flipped');
 // })
 
-// setTimeout(() => {
-//     element.classList.remove("flipped");
-// }, 2000);
