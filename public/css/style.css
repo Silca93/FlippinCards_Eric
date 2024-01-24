@@ -13,6 +13,10 @@ body{
     width: 100%;
 }
 
+.card{
+    cursor: pointer;
+}
+
 /*first card*/
 
 #first1{
@@ -49,9 +53,9 @@ body{
     height: 300px;
     backface-visibility: hidden;
 }
-#first1:active {
+/* #first1:active {
     transform:rotateY(180deg)
-}
+} */
 
 /*second card*/
 
@@ -345,5 +349,7 @@ body{
 }
 
 
-
+.flipped.card {
+    transform: rotateY(180deg);
+  }
 
